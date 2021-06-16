@@ -28,10 +28,10 @@ def score_game(game_core):
     random_array = np.random.randint(1,101, size=(1000))
     for number in random_array:
         count_ls.append(game_core(number))
-    score = round(np.mean(count_ls))
-    print("Данный алгоритм угадывает число в среднем за ", score, " попыток")
-    return(score)
-
+    score = int(np.mean(count_ls))
+    score1 = round(np.mean(count_ls))
+    print("Данный алгоритм угадывает число в среднем от ", score, " до ", score1, " попыток")
+    
 import numpy as np
 number = np.random.randint(1,101)   # загадали число
 print ("Загадано число от 1 до 100")
