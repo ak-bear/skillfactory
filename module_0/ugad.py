@@ -31,8 +31,7 @@ def score_game(game_core):
     for number in random_array:
         count_ls.append(game_core(number))
     score = int(np.mean(count_ls))
-    score1 = round(np.mean(count_ls))
-    print("Данный алгоритм угадывает число в среднем от ", score, " до ", score1, " попыток")
+    print("Данный алгоритм угадывает число в среднем за ", score," попытки")
     
 import numpy as np
 number = np.random.randint(1,101)   # загадали число
