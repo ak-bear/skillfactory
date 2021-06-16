@@ -10,12 +10,12 @@ def game_core_v3(number):
         count+=1
         if number > predict:
             bottom = predict
-            predict = (predict + (top - bottom)//2)
+            predict += (top - bottom)//2
             if (number - predict) == 1:
                 predict += 1
         elif number < predict:
             top = predict
-            predict = (predict - (top - bottom)//2)
+            predict -= (top - bottom)//2
             if (predict - number) == 1:
                 predict -= 1
    #print ("число ", number, " попыток ", count)
