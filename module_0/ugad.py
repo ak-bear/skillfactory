@@ -2,25 +2,26 @@ def game_core_v3(number):
     '''Делим диапазон предсказанием пополам. Проверяем попадание загаданного числа в верхнюю или нижнюю половину и отбрасываем пустую.
        Повторяем до точного попадания или до разницы между загаданным и предсказанным числом в единицу.
        Функция принимает загаданное число и возвращает число попыток'''
-    count = 0
+    count = 1
     bottom = 1
     top = 100
     predict = (top - bottom)//2
     while number != predict:
-        count+=1
         if number > predict:
+            count+=1
             bottom = predict
             predict += (top - bottom)//2
             if (number - predict) == 1:
                 count+=1
                 predict += 1
         elif number < predict:
+            count+=1
             top = predict
             predict -= (top - bottom)//2
             if (predict - number) == 1:
                 count+=1
                 predict -= 1
-   #print ("число ", number, " попыток ", count)
+    print ("число ", number, " попыток ", count)
     return(count) # выход из цикла, если угадали
 
 def score_game(game_core):
@@ -31,7 +32,7 @@ def score_game(game_core):
     for number in random_array:
         count_ls.append(game_core(number))
     score = int(np.mean(count_ls))
-    print("Данный алгоритм угадывает число в среднем за ", score," попытки")
+    print("Данный алгоритм угадывает число в среднем за ", score, "ход.")
     
 import numpy as np
 number = np.random.randint(1,101)   # загадали число
