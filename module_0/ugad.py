@@ -21,8 +21,7 @@ def game_core_v3(number):
             if (predict - number) == 1:
                 count+=1
                 predict -= 1
-    print ("число ", number, " попыток ", count)
-    return(count) # выход из цикла, если угадали
+        return(count) # выход из цикла, если угадали
 
 def score_game(game_core):
     '''Запускаем игру 1000 раз, чтобы узнать, как быстро игра угадывает число'''
@@ -32,7 +31,7 @@ def score_game(game_core):
     for number in random_array:
         count_ls.append(game_core(number))
     score = int(np.mean(count_ls))
-    print("Данный алгоритм угадывает число в среднем за ", score, "ход.")
+    print("Данный алгоритм угадывает число в среднем за ", score, "попыток")
     
 import numpy as np
 number = np.random.randint(1,101)   # загадали число
