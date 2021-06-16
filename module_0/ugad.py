@@ -12,11 +12,13 @@ def game_core_v3(number):
             bottom = predict
             predict += (top - bottom)//2
             if (number - predict) == 1:
+                count+=1
                 predict += 1
         elif number < predict:
             top = predict
             predict -= (top - bottom)//2
             if (predict - number) == 1:
+                count+=1
                 predict -= 1
    #print ("число ", number, " попыток ", count)
     return(count) # выход из цикла, если угадали
