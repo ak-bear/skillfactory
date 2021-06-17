@@ -7,20 +7,20 @@ def game_core_v3(number):
     top = 100
     predict = (top - bottom)//2
     while number != predict:
-        if number > predict:
+        if (number > predict) and (number - predict) == 1:
+            count+=1
+            predict += 1
+        elif number > predict:    
             count+=1
             bottom = predict
             predict += (top - bottom)//2
-            if (number - predict) == 1:
-                count+=1
-                predict += 1
-        elif number < predict:
+        elif (number < predict) and (predict - number) == 1:
+            count+=1
+            predict -= 1
+        elif number < predict:    
             count+=1
             top = predict
             predict -= (top - bottom)//2
-            if (predict - number) == 1:
-                count+=1
-                predict -= 1
         return(count) # выход из цикла, если угадали
 
 def score_game(game_core):
