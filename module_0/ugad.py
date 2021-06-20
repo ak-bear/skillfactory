@@ -21,7 +21,7 @@ def game_core_v3(number):
             count+=1
             top = predict
             predict -= (top - bottom)//2
-        return(count) # выход из цикла, если угадали
+    return(count) # выход из цикла, если угадали
 
 def score_game(game_core):
     '''Запускаем игру 1000 раз, чтобы узнать, как быстро игра угадывает число'''
